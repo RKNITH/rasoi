@@ -1,6 +1,6 @@
 import { verifyToken } from '../utils/tokenUtils.js';
 import User from '../models/User.js';
-import { logger } from '../utils/logger.js';
+
 
 export const protect = async (req, res, next) => {
   try {
@@ -40,7 +40,7 @@ export const protect = async (req, res, next) => {
     req.user = user;
     next();
   } catch (error) {
-    logger.error(`Auth middleware error: ${error.message}`);
+    console.error(`Auth middleware error: ${error.message}`);
     if (error.name === 'JsonWebTokenError') {
       return res.status(401).json({ success: false, message: 'Invalid token.' });
     }

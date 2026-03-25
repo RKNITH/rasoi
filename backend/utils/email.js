@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { logger } from './logger.js';
+
 
 const createTransporter = () => {
   return nodemailer.createTransport({
@@ -78,7 +78,7 @@ export const sendVerificationEmail = async (email, name, otp) => {
     subject: 'Verify Your Email - Rasoi',
     html: emailTemplate('Email Verification', content)
   });
-  logger.info(`Verification email sent to ${email}`);
+  console.log(`Verification email sent to ${email}`);
 };
 
 export const sendPasswordResetEmail = async (email, name, otp) => {

@@ -2,7 +2,7 @@ import User from '../models/User.js';
 import { generateToken, setTokenCookie, clearTokenCookie, generateOTP } from '../utils/tokenUtils.js';
 import { sendVerificationEmail, sendPasswordResetEmail, sendWelcomeEmail } from '../utils/email.js';
 import { AppError } from '../middleware/errorMiddleware.js';
-import { logger } from '../utils/logger.js';
+
 import { uploadToCloudinary } from '../config/cloudinary.js';
 
 // @desc    Register new user

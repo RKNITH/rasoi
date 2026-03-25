@@ -1,4 +1,4 @@
-import { logger } from '../utils/logger.js';
+
 
 export const notFound = (req, res, next) => {
   const error = new Error(`Route not found: ${req.originalUrl}`);
@@ -46,7 +46,7 @@ export const errorHandler = (err, req, res, next) => {
     statusCode = 400;
   }
 
-  logger.error(`${statusCode} - ${message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+  console.error(`${statusCode} - ${message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
 
   res.status(statusCode).json({
     success: false,
