@@ -144,7 +144,7 @@ export default function PublicLayout() {
                 <div className="w-9 h-9 bg-gradient-primary rounded-xl flex items-center justify-center">
                   <span className="text-white text-lg">🍽</span>
                 </div>
-                <span className="font-heading font-bold text-xl">RestaurantPro</span>
+                <span className="font-heading font-bold text-xl">Rasoi</span>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">Complete restaurant management solution built for modern restaurants. Streamline operations, delight customers.</p>
             </div>
@@ -168,8 +168,8 @@ export default function PublicLayout() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-gray-500 text-sm">© {new Date().getFullYear()} RestaurantPro. All rights reserved.</p>
-            <p className="text-gray-500 text-sm">Built with ❤️ for restaurants worldwide</p>
+            <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Rasoi. All rights reserved.</p>
+            <p className="text-gray-500 text-sm">Built with ❤️ for Rasoi</p>
           </div>
         </div>
       </footer>

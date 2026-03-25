@@ -41,14 +41,14 @@ const emailTemplate = (title, content) => `
 <body>
   <div class="container">
     <div class="header">
-      <h1>🍽️ RestaurantPro</h1>
+      <h1>🍽️ Rasoi</h1>
       <p>Restaurant Management System</p>
     </div>
     <div class="body">
       ${content}
     </div>
     <div class="footer">
-      <p>© ${new Date().getFullYear()} RestaurantPro. All rights reserved.</p>
+      <p>© ${new Date().getFullYear()} Rasoi. All rights reserved.</p>
       <p>This is an automated email, please do not reply.</p>
     </div>
   </div>
@@ -61,7 +61,7 @@ export const sendVerificationEmail = async (email, name, otp) => {
   const content = `
     <h2>Verify Your Email Address</h2>
     <p>Hello <strong>${name}</strong>,</p>
-    <p>Thank you for registering with RestaurantPro. Please use the OTP below to verify your email address:</p>
+    <p>Thank you for registering with Rasoi. Please use the OTP below to verify your email address:</p>
     <div class="otp-box">
       <div class="otp-code">${otp}</div>
       <div class="otp-expiry">⏱ This OTP expires in 10 minutes</div>
@@ -75,7 +75,7 @@ export const sendVerificationEmail = async (email, name, otp) => {
   await transporter.sendMail({
     from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
     to: email,
-    subject: 'Verify Your Email - RestaurantPro',
+    subject: 'Verify Your Email - Rasoi',
     html: emailTemplate('Email Verification', content)
   });
   logger.info(`Verification email sent to ${email}`);
@@ -99,7 +99,7 @@ export const sendPasswordResetEmail = async (email, name, otp) => {
   await transporter.sendMail({
     from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
     to: email,
-    subject: 'Password Reset OTP - RestaurantPro',
+    subject: 'Password Reset OTP - Rasoi',
     html: emailTemplate('Password Reset', content)
   });
 };
@@ -107,7 +107,7 @@ export const sendPasswordResetEmail = async (email, name, otp) => {
 export const sendWelcomeEmail = async (email, name, role) => {
   const transporter = createTransporter();
   const content = `
-    <h2>Welcome to RestaurantPro! 🎉</h2>
+    <h2>Welcome to Rasoi! 🎉</h2>
     <p>Hello <strong>${name}</strong>,</p>
     <p>Your account has been successfully created with the role of <strong>${role}</strong>.</p>
     <p>You can now log in and start using the system.</p>
@@ -118,7 +118,7 @@ export const sendWelcomeEmail = async (email, name, role) => {
   await transporter.sendMail({
     from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
     to: email,
-    subject: 'Welcome to RestaurantPro!',
+    subject: 'Welcome to Rasoi!',
     html: emailTemplate('Welcome', content)
   });
 };
@@ -135,7 +135,7 @@ export const sendInvoiceEmail = async (email, name, invoiceBuffer, invoiceNumber
   await transporter.sendMail({
     from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
     to: email,
-    subject: `Invoice #${invoiceNumber} - RestaurantPro`,
+    subject: `Invoice #${invoiceNumber} - Rasoi`,
     html: emailTemplate('Invoice', content),
     attachments: [
       {
